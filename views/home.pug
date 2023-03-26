@@ -1,0 +1,33 @@
+extends layout.pug 
+
+block number1 
+    if error
+        p Please enter some text to search
+    
+    if sucess 
+        p Good job
+    form.form(action="/search" method="POST")
+        input.input(type="text", placeholder="Search for reviews" name="search")
+        button.btn Search
+
+
+    article.reviews 
+        if reviews.length
+            each review in reviews 
+                a.item
+                    div
+                        figure
+                        div
+                            h1 #{ review.title }
+                            h2 #{ review.year }
+                    div
+                        icon &starf;
+                        span 5
+                    div
+                        h1 Short description
+                        p Some text
+                    p.more More 
+        else
+            p No reviews for now
+            
+        

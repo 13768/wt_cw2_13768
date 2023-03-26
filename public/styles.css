@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 860px;
+    margin: 50px auto;
+
+}
+
+.reviews {
+    display: flex;
+    background-color: blanchedalmond;
+}
+.item {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.logo {
+    text-align: center;
+    font-size: 3rem;
+}
+.form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.input {
+    display: inline-block;
+    padding: 10px;
+    font-size: 1rem;
+    width: 72%;
+    border: 1px solid blanchedalmond;
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: 1rem;
+    width: 18%;
+    background: blanchedalmond;
+}
+.more a {
+    
+}
