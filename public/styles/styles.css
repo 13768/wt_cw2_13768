@@ -48,3 +48,7 @@
 .more a {
     
 }
+
+.search-books {
+    visibility: hidden;
+}
