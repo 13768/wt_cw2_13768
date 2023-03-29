@@ -1,0 +1,302 @@
+[
+    {
+        "author": "Hans Christian Andersen",
+        "country": "Denmark",
+        "imageLink": "images/fairy-tales.jpg",
+        "language": "Danish",
+        "link": "https://en.wikipedia.org/wiki/Fairy_Tales_Told_for_Children._First_Collection.\n",
+        "pages": 784,
+        "title": "Fairy tales",
+        "year": 1836
+      },
+      {
+        "author": "Dante Alighieri",
+        "country": "Italy",
+        "imageLink": "images/the-divine-comedy.jpg",
+        "language": "Italian",
+        "link": "https://en.wikipedia.org/wiki/Divine_Comedy\n",
+        "pages": 928,
+        "title": "The Divine Comedy",
+        "year": 1315
+      },
+      {
+        "author": "Unknown",
+        "country": "India/Iran/Iraq/Egypt/Tajikistan",
+        "imageLink": "images/one-thousand-and-one-nights.jpg",
+        "language": "Arabic",
+        "link": "https://en.wikipedia.org/wiki/One_Thousand_and_One_Nights\n",
+        "pages": 288,
+        "title": "One Thousand and One Nights",
+        "year": 1200
+      },
+      {
+        "author": "Jane Austen",
+        "country": "United Kingdom",
+        "imageLink": "images/pride-and-prejudice.jpg",
+        "language": "English",
+        "link": "https://en.wikipedia.org/wiki/Pride_and_Prejudice\n",
+        "pages": 226,
+        "title": "Pride and Prejudice",
+        "year": 1813
+      },
+      {
+        "author": "Honor\u00e9 de Balzac",
+        "country": "France",
+        "imageLink": "images/le-pere-goriot.jpg",
+        "language": "French",
+        "link": "https://en.wikipedia.org/wiki/Le_P%C3%A8re_Goriot\n",
+        "pages": 443,
+        "title": "Le P\u00e8re Goriot",
+        "year": 1835
+      },
+      {
+        "author": "Emily Bront\u00eb",
+        "country": "United Kingdom",
+        "imageLink": "images/wuthering-heights.jpg",
+        "language": "English",
+        "link": "https://en.wikipedia.org/wiki/Wuthering_Heights\n",
+        "pages": 342,
+        "title": "Wuthering Heights",
+        "year": 1847
+      },
+      {
+        "author": "Albert Camus",
+        "country": "Algeria, French Empire",
+        "imageLink": "images/l-etranger.jpg",
+        "language": "French",
+        "link": "https://en.wikipedia.org/wiki/The_Stranger_(novel)\n",
+        "pages": 185,
+        "title": "The Stranger",
+        "year": 1942
+      },
+      {
+        "author": "Miguel de Cervantes",
+        "country": "Spain",
+        "imageLink": "images/don-quijote-de-la-mancha.jpg",
+        "language": "Spanish",
+        "link": "https://en.wikipedia.org/wiki/Don_Quixote\n",
+        "pages": 1056,
+        "title": "Don Quijote De La Mancha",
+        "year": 1610
+      },
+      {
+        "author": "Anton Chekhov",
+        "country": "Russia",
+        "imageLink": "images/stories-of-anton-chekhov.jpg",
+        "language": "Russian",
+        "link": "https://en.wikipedia.org/wiki/List_of_short_stories_by_Anton_Chekhov\n",
+        "pages": 194,
+        "title": "Stories",
+        "year": 1886
+      },
+      {
+        "author": "Charles Dickens",
+        "country": "United Kingdom",
+        "imageLink": "images/great-expectations.jpg",
+        "language": "English",
+        "link": "https://en.wikipedia.org/wiki/Great_Expectations\n",
+        "pages": 194,
+        "title": "Great Expectations",
+        "year": 1861
+      },
+      {
+        "author": "Fyodor Dostoevsky",
+        "country": "Russia",
+        "imageLink": "images/crime-and-punishment.jpg",
+        "language": "Russian",
+        "link": "https://en.wikipedia.org/wiki/Crime_and_Punishment\n",
+        "pages": 551,
+        "title": "Crime and Punishment",
+        "year": 1866
+      },
+      {
+        "author": "Fyodor Dostoevsky",
+        "country": "Russia",
+        "imageLink": "images/the-idiot.jpg",
+        "language": "Russian",
+        "link": "https://en.wikipedia.org/wiki/The_Idiot\n",
+        "pages": 656,
+        "title": "The Idiot",
+        "year": 1869
+      },
+      {
+        "author": "Gustave Flaubert",
+        "country": "France",
+        "imageLink": "images/madame-bovary.jpg",
+        "language": "French",
+        "link": "https://en.wikipedia.org/wiki/Madame_Bovary\n",
+        "pages": 528,
+        "title": "Madame Bovary",
+        "year": 1857
+      },
+      {
+        "author": "Gabriel Garc\u00eda M\u00e1rquez",
+        "country": "Colombia",
+        "imageLink": "images/one-hundred-years-of-solitude.jpg",
+        "language": "Spanish",
+        "link": "https://en.wikipedia.org/wiki/One_Hundred_Years_of_Solitude\n",
+        "pages": 417,
+        "title": "One Hundred Years of Solitude",
+        "year": 1967
+      },
+      {
+        "author": "Gabriel Garc\u00eda M\u00e1rquez",
+        "country": "Colombia",
+        "imageLink": "images/love-in-the-time-of-cholera.jpg",
+        "language": "Spanish",
+        "link": "https://en.wikipedia.org/wiki/Love_in_the_Time_of_Cholera\n",
+        "pages": 368,
+        "title": "Love in the Time of Cholera",
+        "year": 1985
+      },
+      {
+        "author": "Johann Wolfgang von Goethe",
+        "country": "Saxe-Weimar",
+        "imageLink": "images/faust.jpg",
+        "language": "German",
+        "link": "https://en.wikipedia.org/wiki/Goethe%27s_Faust\n",
+        "pages": 158,
+        "title": "Faust",
+        "year": 1832
+      },
+      {
+        "author": "Nikolai Gogol",
+        "country": "Russia",
+        "imageLink": "images/dead-souls.jpg",
+        "language": "Russian",
+        "link": "https://en.wikipedia.org/wiki/Dead_Souls\n",
+        "pages": 432,
+        "title": "Dead Souls",
+        "year": 1842
+      },
+      {
+        "author": "Ernest Hemingway",
+        "country": "United States",
+        "imageLink": "images/the-old-man-and-the-sea.jpg",
+        "language": "English",
+        "link": "https://en.wikipedia.org/wiki/The_Old_Man_and_the_Sea\n",
+        "pages": 128,
+        "title": "The Old Man and the Sea",
+        "year": 1952
+      },
+      {
+        "author": "Homer",
+        "country": "Greece",
+        "imageLink": "images/the-iliad-of-homer.jpg",
+        "language": "Greek",
+        "link": "https://en.wikipedia.org/wiki/Iliad\n",
+        "pages": 608,
+        "title": "Iliad",
+        "year": -735
+      },
+      {
+        "author": "Homer",
+        "country": "Greece",
+        "imageLink": "images/the-odyssey-of-homer.jpg",
+        "language": "Greek",
+        "link": "https://en.wikipedia.org/wiki/Odyssey\n",
+        "pages": 374,
+        "title": "Odyssey",
+        "year": -800
+      },
+      {
+        "author": "Franz Kafka",
+        "country": "Czechoslovakia",
+        "imageLink": "images/stories-of-franz-kafka.jpg",
+        "language": "German",
+        "link": "https://en.wikipedia.org/wiki/Franz_Kafka_bibliography#Short_stories\n",
+        "pages": 488,
+        "title": "Stories",
+        "year": 1924
+      },
+      {
+        "author": "Franz Kafka",
+        "country": "Czechoslovakia",
+        "imageLink": "images/the-trial.jpg",
+        "language": "German",
+        "link": "https://en.wikipedia.org/wiki/The_Trial\n",
+        "pages": 160,
+        "title": "The Trial",
+        "year": 1925
+      },
+      {
+        "author": "George Orwell",
+        "country": "United Kingdom",
+        "imageLink": "images/nineteen-eighty-four.jpg",
+        "language": "English",
+        "link": "https://en.wikipedia.org/wiki/Nineteen_Eighty-Four\n",
+        "pages": 272,
+        "title": "Nineteen Eighty-Four",
+        "year": 1949
+      },
+      {
+        "author": "Edgar Allan Poe",
+        "country": "United States",
+        "imageLink": "images/tales-and-poems-of-edgar-allan-poe.jpg",
+        "language": "English",
+        "link": "https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography#Tales\n",
+        "pages": 842,
+        "title": "Tales",
+        "year": 1950
+      },
+      {
+        "author": "Marcel Proust",
+        "country": "France",
+        "imageLink": "images/a-la-recherche-du-temps-perdu.jpg",
+        "language": "French",
+        "link": "https://en.wikipedia.org/wiki/In_Search_of_Lost_Time\n",
+        "pages": 2408,
+        "title": "In Search of Lost Time",
+        "year": 1920
+      },
+      {
+        "author": "Mark Twain",
+        "country": "United States",
+        "imageLink": "images/the-adventures-of-huckleberry-finn.jpg",
+        "language": "English",
+        "link": "https://en.wikipedia.org/wiki/Adventures_of_Huckleberry_Finn\n",
+        "pages": 224,
+        "title": "The Adventures of Huckleberry Finn",
+        "year": 1884
+      },
+      {
+        "author": "Leo Tolstoy",
+        "country": "Russia",
+        "imageLink": "images/anna-karenina.jpg",
+        "language": "Russian",
+        "link": "https://en.wikipedia.org/wiki/Anna_Karenina\n",
+        "pages": 864,
+        "title": "Anna Karenina",
+        "year": 1877
+      },
+      {
+        "author": "Jonathan Swift",
+        "country": "Ireland",
+        "imageLink": "images/gullivers-travels.jpg",
+        "language": "English",
+        "link": "https://en.wikipedia.org/wiki/Gulliver%27s_Travels\n",
+        "pages": 178,
+        "title": "Gulliver's Travels",
+        "year": 1726
+      },
+      {
+        "author": "William Shakespeare",
+        "country": "England",
+        "imageLink": "images/hamlet.jpg",
+        "language": "English",
+        "link": "https://en.wikipedia.org/wiki/Hamlet\n",
+        "pages": 432,
+        "title": "Hamlet",
+        "year": 1603
+      },
+      {
+        "author": "William Shakespeare",
+        "country": "England",
+        "imageLink": "images/king-lear.jpg",
+        "language": "English",
+        "link": "https://en.wikipedia.org/wiki/King_Lear\n",
+        "pages": 384,
+        "title": "King Lear",
+        "year": 1608
+      }
+]
