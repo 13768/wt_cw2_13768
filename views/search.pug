@@ -1,0 +1,24 @@
+extends layout.pug 
+
+block number1 
+    if error
+        p Please enter some text to search
+    
+        
+    form.form(action="/search" method="POST")
+        input.input(type="text", placeholder="Search for reviews" name="search")
+        button.btn Search
+
+    article.search-books
+        if books.length
+            each book in books
+                a.search-book
+                    div
+                        figure
+                        div
+                            h1 #{ book.title }
+                            h2 #{ book.author }
+                            h3 #{ book.year }
+                            btn.add-review Add
+        else 
+            p No books match the search

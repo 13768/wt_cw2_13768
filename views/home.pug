@@ -1,25 +1,10 @@
 extends layout.pug 
 
-block number1 
-    if error
-        p Please enter some text to search
-    
+block number1  
     if sucess 
         p Good job
-    form.form(action="/search" method="POST")
-        input.input(type="text", placeholder="Search for reviews" name="search")
-        button.btn Search
-
-    article.search-books
-        if books.length
-            each book in books
-                a.search-book
-                    div
-                        figure
-                        div
-                            h1 #{ book.title }
-                            h2 #{ book.author }
-                            h3 #{ book.year }
+        
+    a(class='add' href='/add') Add a review
 
     article.reviews 
         if reviews.length
@@ -27,16 +12,25 @@ block number1
                 a.item
                     div
                         figure
-                        div
-                            h1 #{ review.title }
-                            h2 #{ review.year }
+                        h1 #{ review.title }
+                        h2 #{ review.year }
+                        h3 #{ review.name }
                     div
-                        icon &starf;
+                        i(class='fa-solid fa-star')
                         span 5
                     div
                         h1 Short description
                         p Some text
-                    p.more More 
+                    p.more More
+                     
+                    a(class='btn update' href='/update') 
+                        span.text-gradient 
+                            i(class='fa-solid fa-pen')
+                    
+                    a(class='btn delete') 
+                        span.text-gradient 
+                            i(class='fa-solid fa-xmark')
+                    
         else
             p No reviews for now
             

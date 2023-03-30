@@ -1,0 +1,27 @@
+extends layout.pug 
+
+block number1 
+    article.add-book
+        figure 
+            h1 #{ book.title }
+            h2 #{ book.author }
+        form.form(action="/add" method="POST")
+            label(for='name') Name:
+            span
+                input#name(name='name', type='text', placeholder='Enter your name')
+            label(for='rating') Rating:
+            span 
+                input#rating(name='rating', type='range')
+                i(class='fa-solid fa-star')
+            label(for='description') Description: 
+            span 
+                input#description(name='description' type="text", placeholder="Enter the description")
+
+
+            
+                        
+
+            
+            
+           
+
