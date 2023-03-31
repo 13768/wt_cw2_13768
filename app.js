@@ -4,19 +4,25 @@ const app = express()
 
 // node libs
 const fileSystem = require('fs')
+const path = require('path')
 
 const PORT = 8000
 
-app.set('view engine', 'pug') // setting pug as the default view engine
 
-app.use('/static', express.static('public')) //can also be named assets
+app.set('views', './views');
+app.set('view engine', 'pug') // setting pug as the default view engine
+//can also be named assets
+app.use("/public", express.static(path.join(__dirname, 'public')))
+
 app.use(express.urlencoded({ extended: false }))
+
+
 //localhost:8000
 app.get('/', (req, res) => {
     let q = req.query.added
 
-    if (added)
-    {
+    // if (added)
+    // {
         fileSystem.readFile('./data/reviews.json', (err, data) => {
             if (err) throw err
     
@@ -24,25 +30,36 @@ app.get('/', (req, res) => {
     
             res.render('home', { reviews: reviews })
         })
-    }
-    else
-    {
-        res.render('home', {})
-    }
+    //}
+    // else
+    // {
+    //     res.render('home', {})
+    // }
       
 })
 
 //TODO: work on add! 31.03.2023 Show the list of available books and show the chosen book
+app.get('/search', (req, res) => {
+    
+    fileSystem.readFile('./data/books.json', (err, data) => {
+        if (err) throw err
+
+        let books = JSON.parse(data)
+
+        res.render('search', { books: books })
+    })
+    //res.render('add', {books: books})
+})
 app.get('/add', (req, res) => {
     res.render('add', {})
 })
-
 app.post('/add', (req, res) => {
     let formData = req.body
     
-    if (formData.description.trim() == '')
+    if (formData.description.trim() == '' || formData.name.trim() == '')
     {
         res.render('add', { error: true })
+        //A specific error message?
     }
     else
     {
@@ -72,10 +89,10 @@ app.post('/add', (req, res) => {
 })
 
 function getAll(filename) {
-    return JSON.parse(fs.readFileSync(filename))
+    return JSON.parse(fileSystem.readFileSync(filename))
 }
 function writeAll(filename, data) {
-    return JSON.stringify(fs.writeFileSync(filename, data))
+    return JSON.stringify(fileSystem.writeFileSync(filename, data))
 }
 app.post('/search', (req, res) => {
     const formData = req.body

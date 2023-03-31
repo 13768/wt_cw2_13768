@@ -9,12 +9,14 @@ block number1
         input.input(type="text", placeholder="Search for reviews" name="search")
         button.btn Search
 
+
     article.search-books
         if books.length
             each book in books
-                a.search-book
+                a(class='search-book' href='/add')
                     div
                         figure
+                            img(src="/public/" + book.imageLink alt=book.title)
                         div
                             h1 #{ book.title }
                             h2 #{ book.author }
