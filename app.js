@@ -1,17 +1,17 @@
 // third party libs
 const express = require('express')
 const id = require('uniqid')
-const jsdom = require('jsdom')
-const { JSDOM } = jsdom;
+
+
 const app = express()
-let bookData = [];
+
 // node libs
 const fileSystem = require('fs')
 const path = require('path');
 const { error } = require('console');
 
 const PORT = 8000
-global.document = new JSDOM('search').window.document
+
 
 app.set('views', './views');
 app.set('view engine', 'pug') // setting pug as the default view engine
