@@ -1,13 +1,17 @@
 // third party libs
 const express = require('express')
+const id = require('uniqid')
+const jsdom = require('jsdom')
+const { JSDOM } = jsdom;
 const app = express()
-
+let bookData = [];
 // node libs
 const fileSystem = require('fs')
-const path = require('path')
+const path = require('path');
+const { error } = require('console');
 
 const PORT = 8000
-
+global.document = new JSDOM('search').window.document
 
 app.set('views', './views');
 app.set('view engine', 'pug') // setting pug as the default view engine
@@ -19,54 +23,114 @@ app.use(express.urlencoded({ extended: false }))
 
 //localhost:8000
 app.get('/', (req, res) => {
-    let q = req.query.added
-
-    // if (added)
-    // {
-        fileSystem.readFile('./data/reviews.json', (err, data) => {
-            if (err) throw err
-    
-            let reviews = JSON.parse(data)
-    
-            res.render('home', { reviews: reviews })
-        })
-    //}
-    // else
-    // {
-    //     res.render('home', {})
-    // }
+    let added = req.query.added
+    let reviews = getAll('reviews')
+    if (added)
+    {
+        res.render('home', { reviews: reviews, added: true })
+        
+    }
+    else
+    {
+        res.render('home', { reviews: reviews, added: false})
+    }
       
 })
+app.get('/:id/add', (req, res) => {
+    const book_id = req.params.id
 
-//TODO: work on add! 31.03.2023 Show the list of available books and show the chosen book
-app.get('/search', (req, res) => {
-    
     fileSystem.readFile('./data/books.json', (err, data) => {
         if (err) throw err
 
-        let books = JSON.parse(data)
-
-        res.render('search', { books: books })
+        const books = JSON.parse(data)
+        const book = books.find(book => book.id == book_id)
+        res.render('add', { book: book })
     })
-    //res.render('add', {books: books})
 })
-app.get('/add', (req, res) => {
-    res.render('add', {})
+app.get('/:id/update', (req, res) => {
+    const review_id = req.params.id
+
+    fileSystem.readFile('./data/reviews.json', (err, data) => {
+        if (err) throw err
+
+        const reviews = JSON.parse(data)
+        const review = reviews.find(review => review.id == review_id)
+        res.render('update', { review: review })
+    })
 })
+app.post('/:id/update', (req, res) => {
+    const formData = req.body
+    const id = req.params.id
+    let updatedReview = {
+        id: id,
+        name: formData.name,
+        rating: formData.rating,
+        title: formData.title,
+        imageLink: formData.imageLink,
+        description: formData.description
+    }
+
+    fileSystem.readFile('./data/reviews.json', (err, data) => {
+        if (err) throw err
+
+        const reviews = JSON.parse(data)
+        const selectedReview = reviews.find(review => review.id == id)
+        const reviewId = reviews.indexOf(selectedReview)
+        let splicedReview = reviews.splice(reviewId, 1)[0]
+        splicedReview = updatedReview
+        reviews.push(splicedReview)
+
+        fileSystem.writeFile('./data/reviews.json', JSON.stringify(reviews), (err) => {
+            if (err) throw err
+
+            res.render('home', { reviews: reviews, updated:true })
+
+        })
+    })
+
+})
+app.get('/:id/delete', (req, res) => {
+    //TODO: confirm the deletion using a prompt
+    const review_id = req.params.id
+
+    fileSystem.readFile('./data/reviews.json', (err, data) => {
+        if (err) throw err
+
+        const reviews = JSON.parse(data)
+        const filteredReviews = reviews.filter(review => review.id != review_id)
+        res.render('home', { reviews: filteredReviews, deleted: true })
+    })
+})
+
+app.get('/search', (req, res) => {
+    
+    let books = getAll('books')
+    res.render('search', { books: books })
+    
+    
+})
+
 app.post('/add', (req, res) => {
     let formData = req.body
     
-    if (formData.description.trim() == '' || formData.name.trim() == '')
+    if (formData.description.trim() == '') 
     {
-        res.render('add', { error: true })
+        res.render('add', { error_desc: true })
         //A specific error message?
+    }
+    else if (formData.name.trim() == '')
+    {
+        res.render('add', {error_name: true})
     }
     else
     {
         let review = {
-            name: data.name,
-            rating: data.rating,
-            description: data.description
+            id: id(),
+            title: formData.title,
+            imageLink: formData.imageLink,
+            name: formData.name,
+            rating: formData.rating,
+            description: formData.description
         }
     
         let reviews = getAll('reviews')
@@ -74,25 +138,15 @@ app.post('/add', (req, res) => {
         reviews.push(review)
         writeAll('reviews', reviews)
         res.redirect('/?added=true')
-        //The old version. Check the above, might be better
-        fileSystem.readFile('./data/reviews.json', (err, data) => {
-            if (err) throw err
-
-            //JSON.parse creates a javascript object from the string data in the json file 
-            const reviews = JSON.parse(data)
-            //We need to show the object(s) with the title or author that is similar to the value typed in the search
-            // field and if there are none, no items should be displayed
-            
-            //we are not creating any review object. This is just filtering so far.
-        })
+        
     }
 })
 
 function getAll(filename) {
-    return JSON.parse(fileSystem.readFileSync(filename))
+    return JSON.parse(fileSystem.readFileSync(`./data/${filename}.json`))
 }
 function writeAll(filename, data) {
-    return JSON.stringify(fileSystem.writeFileSync(filename, data))
+    return fileSystem.writeFileSync(`./data/${filename}.json`, JSON.stringify(data))
 }
 app.post('/search', (req, res) => {
     const formData = req.body
@@ -121,5 +175,5 @@ app.post('/search', (req, res) => {
 app.listen(PORT, (err) => {
     if (err) throw err
 
-    console.log(`This app is running in port ${PORT}`)
+    console.log(`This app is running in https://localhost:${PORT}`)
 })

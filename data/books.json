@@ -1,5 +1,6 @@
 [
     {
+        "id": "1",
         "author": "Hans Christian Andersen",
         "country": "Denmark",
         "imageLink": "images/fairy-tales.jpg",
@@ -10,6 +11,7 @@
         "year": 1836
       },
       {
+        "id": "2",
         "author": "Dante Alighieri",
         "country": "Italy",
         "imageLink": "images/the-divine-comedy.jpg",
@@ -20,6 +22,7 @@
         "year": 1315
       },
       {
+        "id": "3",
         "author": "Unknown",
         "country": "India/Iran/Iraq/Egypt/Tajikistan",
         "imageLink": "images/one-thousand-and-one-nights.jpg",
@@ -30,6 +33,7 @@
         "year": 1200
       },
       {
+        "id": "4",
         "author": "Jane Austen",
         "country": "United Kingdom",
         "imageLink": "images/pride-and-prejudice.jpg",
@@ -40,6 +44,7 @@
         "year": 1813
       },
       {
+        "id": "5",
         "author": "Honor\u00e9 de Balzac",
         "country": "France",
         "imageLink": "images/le-pere-goriot.jpg",
@@ -50,6 +55,7 @@
         "year": 1835
       },
       {
+        "id": "6",
         "author": "Emily Bront\u00eb",
         "country": "United Kingdom",
         "imageLink": "images/wuthering-heights.jpg",
@@ -60,6 +66,7 @@
         "year": 1847
       },
       {
+        "id": "7",
         "author": "Albert Camus",
         "country": "Algeria, French Empire",
         "imageLink": "images/l-etranger.jpg",
@@ -70,6 +77,7 @@
         "year": 1942
       },
       {
+        "id": "8",
         "author": "Miguel de Cervantes",
         "country": "Spain",
         "imageLink": "images/don-quijote-de-la-mancha.jpg",
@@ -80,6 +88,7 @@
         "year": 1610
       },
       {
+        "id": "9",
         "author": "Anton Chekhov",
         "country": "Russia",
         "imageLink": "images/stories-of-anton-chekhov.jpg",
@@ -90,6 +99,7 @@
         "year": 1886
       },
       {
+        "id": "10",
         "author": "Charles Dickens",
         "country": "United Kingdom",
         "imageLink": "images/great-expectations.jpg",
@@ -100,6 +110,7 @@
         "year": 1861
       },
       {
+        "id": "11",
         "author": "Fyodor Dostoevsky",
         "country": "Russia",
         "imageLink": "images/crime-and-punishment.jpg",
@@ -110,6 +121,7 @@
         "year": 1866
       },
       {
+        "id": "12",
         "author": "Fyodor Dostoevsky",
         "country": "Russia",
         "imageLink": "images/the-idiot.jpg",
@@ -120,6 +132,7 @@
         "year": 1869
       },
       {
+        "id": "13",
         "author": "Gustave Flaubert",
         "country": "France",
         "imageLink": "images/madame-bovary.jpg",
@@ -130,6 +143,7 @@
         "year": 1857
       },
       {
+        "id": "14",
         "author": "Gabriel Garc\u00eda M\u00e1rquez",
         "country": "Colombia",
         "imageLink": "images/one-hundred-years-of-solitude.jpg",
@@ -140,6 +154,7 @@
         "year": 1967
       },
       {
+        "id": "15",
         "author": "Gabriel Garc\u00eda M\u00e1rquez",
         "country": "Colombia",
         "imageLink": "images/love-in-the-time-of-cholera.jpg",
@@ -150,6 +165,7 @@
         "year": 1985
       },
       {
+        "id": "16",
         "author": "Johann Wolfgang von Goethe",
         "country": "Saxe-Weimar",
         "imageLink": "images/faust.jpg",
@@ -160,6 +176,7 @@
         "year": 1832
       },
       {
+        "id": "17",
         "author": "Nikolai Gogol",
         "country": "Russia",
         "imageLink": "images/dead-souls.jpg",
@@ -170,6 +187,7 @@
         "year": 1842
       },
       {
+        "id": "18",
         "author": "Ernest Hemingway",
         "country": "United States",
         "imageLink": "images/the-old-man-and-the-sea.jpg",
@@ -180,6 +198,7 @@
         "year": 1952
       },
       {
+        "id": "19",
         "author": "Homer",
         "country": "Greece",
         "imageLink": "images/the-iliad-of-homer.jpg",
@@ -190,6 +209,7 @@
         "year": -735
       },
       {
+        "id": "20",
         "author": "Homer",
         "country": "Greece",
         "imageLink": "images/the-odyssey-of-homer.jpg",
@@ -200,6 +220,7 @@
         "year": -800
       },
       {
+        "id": "21",
         "author": "Franz Kafka",
         "country": "Czechoslovakia",
         "imageLink": "images/stories-of-franz-kafka.jpg",
@@ -210,6 +231,7 @@
         "year": 1924
       },
       {
+        "id": "22",
         "author": "Franz Kafka",
         "country": "Czechoslovakia",
         "imageLink": "images/the-trial.jpg",
@@ -220,6 +242,7 @@
         "year": 1925
       },
       {
+        "id": "23",
         "author": "George Orwell",
         "country": "United Kingdom",
         "imageLink": "images/nineteen-eighty-four.jpg",
@@ -230,6 +253,7 @@
         "year": 1949
       },
       {
+        "id": "24",
         "author": "Edgar Allan Poe",
         "country": "United States",
         "imageLink": "images/tales-and-poems-of-edgar-allan-poe.jpg",
@@ -240,6 +264,7 @@
         "year": 1950
       },
       {
+        "id": "25",
         "author": "Marcel Proust",
         "country": "France",
         "imageLink": "images/a-la-recherche-du-temps-perdu.jpg",
@@ -250,6 +275,7 @@
         "year": 1920
       },
       {
+        "id": "26",
         "author": "Mark Twain",
         "country": "United States",
         "imageLink": "images/the-adventures-of-huckleberry-finn.jpg",
@@ -260,6 +286,7 @@
         "year": 1884
       },
       {
+        "id": "27",
         "author": "Leo Tolstoy",
         "country": "Russia",
         "imageLink": "images/anna-karenina.jpg",
@@ -270,6 +297,7 @@
         "year": 1877
       },
       {
+        "id": "28",
         "author": "Jonathan Swift",
         "country": "Ireland",
         "imageLink": "images/gullivers-travels.jpg",
@@ -280,6 +308,7 @@
         "year": 1726
       },
       {
+        "id": "29",
         "author": "William Shakespeare",
         "country": "England",
         "imageLink": "images/hamlet.jpg",
@@ -290,6 +319,7 @@
         "year": 1603
       },
       {
+        "id": "30",
         "author": "William Shakespeare",
         "country": "England",
         "imageLink": "images/king-lear.jpg",

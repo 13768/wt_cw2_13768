@@ -1,10 +1,16 @@
 extends layout.pug 
 
 block number1  
-    if sucess 
-        p Good job
-        
-    a(class='add-search' href='/search') Add a review
+    
+    if deleted 
+        p.alert Deleted
+    if added 
+        p.alert Added
+    if updated 
+        p.alert Updated
+
+    div.a-container 
+        a(class='add-search btn btn-dark' href='/search') Add a review
 
     article.reviews 
         if reviews.length
@@ -12,22 +18,25 @@ block number1
                 a.item
                     div
                         figure
+                            img(src=review.imageLink alt=review.title)
                         h1 #{ review.title }
                         h2 #{ review.year }
                         h3 #{ review.name }
                     div
+                        - var rate = review.rating 
+ 
                         i(class='fa-solid fa-star')
                         span 5
                     div
                         h1 Short description
-                        p Some text
+                        p #{ review.description }
                     p.more More
                      
-                    a(class='btn update' href='/update') 
+                    a(class='btn update' href=`/${review.id}/update`) 
                         span.text-gradient 
                             i(class='fa-solid fa-pen')
                     
-                    a(class='btn delete') 
+                    a(class='btn delete' href=`/${review.id}/delete`) 
                         span.text-gradient 
                             i(class='fa-solid fa-xmark')
                     

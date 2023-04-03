@@ -49,3 +49,16 @@
     
 }
 
+.add-search {
+    padding:1em;
+    text-align: center;
+    display:inline-block;
+    text-decoration: none !important;
+    margin:0 auto;
+
+}
+
+.a-container {
+    width: 100%;
+    text-align: center;
+}

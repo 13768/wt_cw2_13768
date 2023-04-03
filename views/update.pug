@@ -1,0 +1,28 @@
+extends layout.pug 
+
+block number1 
+    if error_name
+        p Please enter a name 
+   
+    if error_desc 
+        p Please enter a decription
+
+    article.update-review
+        form.form(action=`/${review.id}/update` method="POST")
+            figure
+                img#image(src=review.imageLink alt=review.title)
+                input#imageLink(type="text" value=review.imageLink)
+            label(for='title') Title: 
+            span
+                input#title(autofocus name='title' type='text' value=review.title readonly)
+            label(for='name') Name:
+            span
+                input#name(name='name', type='text' value=review.name)
+            label(for='rating') Rating:
+            span 
+                input#rating(name='rating', type='range')
+                i(class='fa-solid fa-star')
+            label(for='description') Description: 
+            span 
+                textarea#description(name='description' rows="4" col="100") #{review.description}
+            button.btn Save

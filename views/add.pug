@@ -1,11 +1,22 @@
 extends layout.pug 
 
 block number1 
+    if error_name
+        p Please enter a name 
+    
+    if error_desc 
+        p Please enter a decription
     article.add-book
-        figure 
-            h1 #{ book.title }
-            h2 #{ book.author }
         form.form(action="/add" method="POST")
+            figure
+                img#image(src="/public/" + book.imageLink alt=book.title)
+                input#imageLink(type="text" value="/public/" + book.imageLink) 
+                h1 #{ book.title }
+                h2 #{ book.author }
+        
+            label(for='title') Title: 
+            span
+                input#title(name='title' type='text' value=book.title readonly)
             label(for='name') Name:
             span
                 input#name(name='name', type='text', placeholder='Enter your name')
@@ -15,7 +26,8 @@ block number1
                 i(class='fa-solid fa-star')
             label(for='description') Description: 
             span 
-                input#description(name='description' type="text", placeholder="Enter the description")
+                textarea#description(name='description' rows="4" col="100" placeholder="Enter the description")
+            button.btn Save
 
 
             

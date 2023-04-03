@@ -7,20 +7,20 @@ block number1
         
     form.form(action="/search" method="POST")
         input.input(type="text", placeholder="Search for reviews" name="search")
-        button.btn Search
+        button(class="btn btn-dark") Search
 
 
+    
     article.search-books
         if books.length
             each book in books
-                a(class='search-book' href='/add')
+                div.search-book
+                    figure
+                        img#photo(src="/public/" + book.imageLink alt=book.title)
                     div
-                        figure
-                            img(src="/public/" + book.imageLink alt=book.title)
-                        div
-                            h1 #{ book.title }
-                            h2 #{ book.author }
-                            h3 #{ book.year }
-                            btn.add-review Add
+                        h1#title #{ book.title }
+                        h2#author #{ book.author }
+                        h3#year #{ book.year }
+                        a.btn-add(href=`/${book.id}/add`) Add
         else 
             p No books match the search
