@@ -5,7 +5,7 @@ This is an app to share reviews for books. Users can choose any book to write a 
 #### Instructions
 1. Download the source code
 ```bash
-git clone [url to the github repo]
+git clone https://github.com/13768/wt_cw2_13768.git
 
 ```
 or just download the *.zip file
@@ -26,3 +26,4 @@ node app
 - uniqid
 
 #### Link to the github repo
+https://github.com/13768/wt_cw2_13768.git
