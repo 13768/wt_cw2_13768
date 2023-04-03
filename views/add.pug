@@ -2,10 +2,10 @@ extends layout.pug
 
 block number1 
     if error_name
-        p Please enter a name 
+        p.err Please enter a name 
     
     if error_desc 
-        p Please enter a decription
+        p.err Please enter a decription
     article.add-book
         form.form(action="/add" method="POST")
             figure

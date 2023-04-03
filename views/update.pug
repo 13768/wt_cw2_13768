@@ -2,10 +2,10 @@ extends layout.pug
 
 block number1 
     if error_name
-        p Please enter a name 
+        p.err Please enter a name 
    
     if error_desc 
-        p Please enter a decription
+        p.err Please enter a decription
 
     article.update-review
         form.form(action=`/${review.id}/update` method="POST")
@@ -16,7 +16,7 @@ block number1
                 label(for='title') Title: 
                 input#title(autofocus name='title' type='text' value=review.title readonly)
                 label(for='name') Name:
-                input#name(name='name', type='text' value=review.name required)
+                input#name(autofocus name='name', type='text' value=review.name required)
                 label(for='rating') Rating:
                 span 
                     .stars 

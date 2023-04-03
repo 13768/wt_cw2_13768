@@ -3,11 +3,11 @@ extends layout.pug
 block number1  
     
     if deleted 
-        p.alert Deleted
+        p.alert-msg Deleted
     if added 
-        p.alert Added
+        p.alert-msg Added
     if updated 
-        p.alert Updated
+        p.alert-msg Updated
 
     div.a-container 
         a(class='add-search btn btn-dark' href='/search') Add a review
@@ -19,26 +19,33 @@ block number1
                     div.book-image
                         figure
                             img(src=review.imageLink alt=review.title)
+                        
+                    div(class="info home-rev")   
                         h1 #{ review.title }
-                        h2 #{ review.year }
-                        
-                    div
-                        span #{ review.rating }
-                        i(class='fa-solid fa-star')
-                        
-                    div.description
-                        h3 Short description
-                        blockquote(class="blockquote text-center")
-                            p #{ review.description }
-                            footer(class="blockquote-footer") #{ review.name }
+                        div
+                            span #{ review.rating }
+                            i(class='fa-solid fa-star st')
+                            i(class='fa-solid fa-star')
+                            i(class='fa-solid fa-star')
+                            i(class='fa-solid fa-star')
+                            i(class='fa-solid fa-star')
+                            
+                        div.description
+                            h3 Short description
+                            blockquote(class="blockquote text-center")
+                                p 
+                                    span.quote &ldquo; 
+                                    span.de #{ review.description }
+                                    span.quote &rdquo;
+                                footer(class="blockquote-footer") #{ review.name }
                     
-                     
-                    a(class='btn update' href=`/${review.id}/update`) 
-                        span.text-gradient 
-                            i(class='fa-solid fa-pen')
-                    
-                    a(class='btn delete' href=`/${review.id}/delete`) 
-                        span.text-gradient 
+                    div.controls 
+                        a(class='btn update' href=`/${review.id}/update`) 
+                            span.text-gradient 
+                                i(class='fa-solid fa-pen')
+                        
+                        a(class='btn delete' href=`/${review.id}/delete`) 
+                            span.text-gradient 
                             i(class='fa-solid fa-xmark')
 
                     

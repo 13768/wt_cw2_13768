@@ -1,1 +1,47 @@
-[{"id":"2j5d01u9wlg12ro5e","name":"Malika Temurova ","rating":"","title":"Stories","imageLink":"/public/images/stories-of-franz-kafka.jpg","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam?","deleted":"false"}]
+[
+    {
+        "id": "2j5d01u9wlg12ro5e",
+        "name": "Phoebe Wallace",
+        "rating": "5",
+        "title": "Stories",
+        "imageLink": "/public/images/stories-of-franz-kafka.jpg",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam?",
+        "deleted": "false"
+    },
+    {
+        "id": "2j5d0288wlg14bsdx",
+        "name": "Melissa Chu",
+        "rating": "3",
+        "title": "Stories",
+        "imageLink": "/public/images/stories-of-anton-chekhov.jpg",
+        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        "deleted": "true"
+    },
+    {
+        "id": "2j5d0288wlg14bsdx",
+        "name": "Melissa Chu",
+        "rating": "3",
+        "title": "Stories",
+        "imageLink": "/public/images/stories-of-anton-chekhov.jpg",
+        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        "deleted": "true"
+    },
+    {
+        "id": "2j5d0288wlg14bsdx",
+        "name": "Melissa Chu",
+        "rating": "3",
+        "title": "Stories",
+        "imageLink": "/public/images/stories-of-anton-chekhov.jpg",
+        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        "deleted": "true"
+    },
+    {
+        "id": "2j5d0288wlg14woe5",
+        "title": "Stories",
+        "imageLink": "/public/images/stories-of-anton-chekhov.jpg",
+        "name": "Phoebe Wallace",
+        "rating": "5",
+        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        "deleted": "false"
+    }
+]
