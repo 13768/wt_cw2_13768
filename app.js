@@ -25,14 +25,15 @@ app.use(express.urlencoded({ extended: false }))
 app.get('/', (req, res) => {
     let added = req.query.added
     let reviews = getAll('reviews')
+    let activeReviews = reviews.filter(review => review.deleted == "false")
     if (added)
     {
-        res.render('home', { reviews: reviews, added: true })
+        res.render('home', { reviews: activeReviews, added: true })
         
     }
     else
     {
-        res.render('home', { reviews: reviews, added: false})
+        res.render('home', { reviews: activeReviews, added: false})
     }
       
 })
@@ -61,13 +62,15 @@ app.get('/:id/update', (req, res) => {
 app.post('/:id/update', (req, res) => {
     const formData = req.body
     const id = req.params.id
+    
     let updatedReview = {
         id: id,
         name: formData.name,
         rating: formData.rating,
         title: formData.title,
         imageLink: formData.imageLink,
-        description: formData.description
+        description: formData.description,
+        deleted: "false"
     }
 
     fileSystem.readFile('./data/reviews.json', (err, data) => {
@@ -97,8 +100,19 @@ app.get('/:id/delete', (req, res) => {
         if (err) throw err
 
         const reviews = JSON.parse(data)
-        const filteredReviews = reviews.filter(review => review.id != review_id)
-        res.render('home', { reviews: filteredReviews, deleted: true })
+        let deletedReview = reviews.find(review => review.id == review_id)
+        deletedReview.deleted = "true"
+        const reviewId = reviews.indexOf(deletedReview)
+        let splicedReview = deletedReview
+        reviews.push(splicedReview)
+        const filteredReviews = reviews.filter(review => review.deleted == "false")
+        
+        fileSystem.writeFile('./data/reviews.json', JSON.stringify(reviews), (err) => {
+            if (err) throw err
+
+            res.render('home', {reviews:filteredReviews, deleted: true})
+        })
+        
     })
 })
 
@@ -112,15 +126,15 @@ app.get('/search', (req, res) => {
 
 app.post('/add', (req, res) => {
     let formData = req.body
-    
+    const books = getAll('books')
     if (formData.description.trim() == '') 
     {
-        res.render('add', { error_desc: true })
-        //A specific error message?
+        res.render('search', { books:books, error_desc: true })
+        
     }
     else if (formData.name.trim() == '')
     {
-        res.render('add', {error_name: true})
+        res.render('search', { books:books, error_name: true})
     }
     else
     {
@@ -130,7 +144,8 @@ app.post('/add', (req, res) => {
             imageLink: formData.imageLink,
             name: formData.name,
             rating: formData.rating,
-            description: formData.description
+            description: formData.description,
+            deleted: "false"
         }
     
         let reviews = getAll('reviews')
@@ -149,24 +164,27 @@ function writeAll(filename, data) {
     return fileSystem.writeFileSync(`./data/${filename}.json`, JSON.stringify(data))
 }
 app.post('/search', (req, res) => {
+    const books = getAll('books')
     const formData = req.body
-
-    if (formData.search.trim() == '')
+    const str = formData.search
+    if (str.trim() == '')
     {
-        res.render('search', { error: true })
+        res.render('search', { books: books, error: true })
     }
     else
     {
         //TODO: filter out the available books depending on the typed out text. Should we use javascript for front?
         //read is similar to establishing connection to the database
-        fileSystem.readFile('./data/reviews.json', (err, data) => {
+        fileSystem.readFile('./data/books.json', (err, data) => {
             if (err) throw err
 
             //JSON.parse creates a javascript object from the string data in the json file 
-            const reviews = JSON.parse(data)
+            const books = JSON.parse(data)
+            const filteredBooks = books.filter(book => book.title.toLowerCase().includes(str.toLowerCase()))
             //We need to show the object(s) with the title or author that is similar to the value typed in the search
             // field and if there are none, no items should be displayed
-            
+            let n = filteredBooks.length;
+            res.render('search', { books: filteredBooks, n, searched: true})
             //we are not creating any review object. This is just filtering so far.
         })
     }

@@ -2,11 +2,22 @@ extends layout.pug
 
 block number1 
     if error
-        p Please enter some text to search
+        p.error Please enter some text to search
     
+    if n == 0
+        p No items match the search 
+    else if n == 1
+        p Only one such book
+    else if searched 
+        p We found #{n} books
+    
+    if error_name 
+        p.error Name should not be empty 
+    if error_desc 
+        p.error Description should not be empty
         
     form.form(action="/search" method="POST")
-        input.input(type="text", placeholder="Search for reviews" name="search")
+        input.input(type="text" placeholder="Search for reviews" name="search")
         button(class="btn btn-dark") Search
 
 
@@ -15,12 +26,11 @@ block number1
         if books.length
             each book in books
                 div.search-book
-                    figure
+                    figure.image-book
                         img#photo(src="/public/" + book.imageLink alt=book.title)
-                    div
-                        h1#title #{ book.title }
-                        h2#author #{ book.author }
-                        h3#year #{ book.year }
-                        a.btn-add(href=`/${book.id}/add`) Add
+                    div.info
+                        h3#title #{ book.title }, #{ book.year }
+                        h4#author by #{ book.author }
+                        a(class="btn btn-dark" href=`/${book.id}/add`) Write review
         else 
-            p No books match the search
+            p.msg No books match the search

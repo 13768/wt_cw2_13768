@@ -15,22 +15,23 @@ block number1
     article.reviews 
         if reviews.length
             each review in reviews 
-                a.item
-                    div
+                .item
+                    div.book-image
                         figure
                             img(src=review.imageLink alt=review.title)
                         h1 #{ review.title }
                         h2 #{ review.year }
-                        h3 #{ review.name }
+                        
                     div
-                        - var rate = review.rating 
- 
+                        span #{ review.rating }
                         i(class='fa-solid fa-star')
-                        span 5
-                    div
-                        h1 Short description
-                        p #{ review.description }
-                    p.more More
+                        
+                    div.description
+                        h3 Short description
+                        blockquote(class="blockquote text-center")
+                            p #{ review.description }
+                            footer(class="blockquote-footer") #{ review.name }
+                    
                      
                     a(class='btn update' href=`/${review.id}/update`) 
                         span.text-gradient 
@@ -39,8 +40,13 @@ block number1
                     a(class='btn delete' href=`/${review.id}/delete`) 
                         span.text-gradient 
                             i(class='fa-solid fa-xmark')
+
                     
         else
-            p No reviews for now
+            p.msg No reviews for now
+
+    footer
+        p.copyright &#169;This webpage was created for Web Technology coursework by student 
+            span.id 00013768
             
         

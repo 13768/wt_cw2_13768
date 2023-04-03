@@ -10,24 +10,35 @@ block number1
         form.form(action="/add" method="POST")
             figure
                 img#image(src="/public/" + book.imageLink alt=book.title)
-                input#imageLink(type="text" value="/public/" + book.imageLink) 
-                h1 #{ book.title }
-                h2 #{ book.author }
-        
-            label(for='title') Title: 
-            span
+                input#imageLink(type="text" name="imageLink" value="/public/" + book.imageLink) 
+                h3 #{ book.title }
+                h4 #{ book.author }
+            div.add-cont
+                label(for='title') Title: 
                 input#title(name='title' type='text' value=book.title readonly)
-            label(for='name') Name:
-            span
-                input#name(name='name', type='text', placeholder='Enter your name')
-            label(for='rating') Rating:
-            span 
-                input#rating(name='rating', type='range')
-                i(class='fa-solid fa-star')
-            label(for='description') Description: 
-            span 
-                textarea#description(name='description' rows="4" col="100" placeholder="Enter the description")
-            button.btn Save
+                label(for='name') Name:
+                input#name(autofocus name='name', type='text', placeholder='Enter your name' required)
+                label(for='rating') Rating:
+                span           
+                    .stars 
+                        div#rate-num 
+                            p 0
+                        div(class='star' onmouseenter="stars(1)")
+                            i(class='fa-regular fa-star')
+                        div(class='star' onmouseenter="stars(2)")
+                            i(class='fa-regular fa-star')
+                        div(class='star' onmousecenter="stars(3)")
+                            i(class='fa-regular fa-star')
+                        div(class='star' onmouseenter="stars(4)")
+                            i(class='fa-regular fa-star')
+                        div(class='star' onmouseenter="stars(5)")
+                            i(class='fa-regular fa-star')
+                    input#hidden(name='rating', type=text, value="")
+                  
+                label(for='description') Description: 
+                textarea#description(name='description' rows="4" col="100" placeholder="Enter the description" required)
+                button(class="btn btn-dark") Save
+        script(src="../public/javascripts/script.js")
 
 
             

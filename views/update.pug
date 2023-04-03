@@ -11,18 +11,29 @@ block number1
         form.form(action=`/${review.id}/update` method="POST")
             figure
                 img#image(src=review.imageLink alt=review.title)
-                input#imageLink(type="text" value=review.imageLink)
-            label(for='title') Title: 
-            span
+                input#imageLink(type="text" name="imageLink" value=review.imageLink)
+            div.add-cont
+                label(for='title') Title: 
                 input#title(autofocus name='title' type='text' value=review.title readonly)
-            label(for='name') Name:
-            span
-                input#name(name='name', type='text' value=review.name)
-            label(for='rating') Rating:
-            span 
-                input#rating(name='rating', type='range')
-                i(class='fa-solid fa-star')
-            label(for='description') Description: 
-            span 
-                textarea#description(name='description' rows="4" col="100") #{review.description}
-            button.btn Save
+                label(for='name') Name:
+                input#name(name='name', type='text' value=review.name required)
+                label(for='rating') Rating:
+                span 
+                    .stars 
+                        div#rate-num 
+                            p 0
+                        div(class='star' onmouseenter="stars(1)")
+                            i(class='fa-regular fa-star')
+                        div(class='star' onmouseenter="stars(2)")
+                            i(class='fa-regular fa-star')
+                        div(class='star' onmousecenter="stars(3)")
+                            i(class='fa-regular fa-star')
+                        div(class='star' onmouseenter="stars(4)")
+                            i(class='fa-regular fa-star')
+                        div(class='star' onmouseenter="stars(5)")
+                            i(class='fa-regular fa-star')
+                    input#hidden(name='rating', type=text, value="")
+                label(for='description') Description: 
+                textarea#description(name='description' rows="4" col="100" required) #{review.description}
+                button(class="btn btn-dark") Save
+        script(src="../public/javascripts/script.js")
