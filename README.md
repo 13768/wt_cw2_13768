@@ -27,3 +27,6 @@ node app
 
 #### Link to the github repo
 https://github.com/13768/wt_cw2_13768.git
+
+#### Link to the aplication on Glitch
+https://purple-zippy-cartwheel.glitch.me/
